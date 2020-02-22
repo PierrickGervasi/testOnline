@@ -43,6 +43,41 @@
             margin:5px;
         }
 
+        .header ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            right:0;
+            position:absolute;
+            height:100%;
+
+        }
+
+        .header li {
+            float: left;
+        }
+
+        .header li p {
+            display: inline-block;
+            color:white;
+            text-decoration: none;
+            line-height: 50px;
+            padding-left:15px;
+            padding-right:15px;
+        }
+
+        .header li p:hover {
+            cursor: pointer;
+        }
+
+        #dp1{
+            display:none;
+        }
+
+        #dp2{
+            display:none;
+        }
+
         .footer div{
             width:50%;
             height:100%;
@@ -70,10 +105,59 @@
 
     </style>
 
+    <script>
+
+        function goToPage(texte){
+            var listeOptions= document.getElementById("listeOptions").children;
+            var nbrOptions = listeOptions.length;
+
+            for (var i=0;i<nbrOptions;i++){
+                var li = listeOptions[i];
+                var txt = li.firstElementChild;
+
+                li.style.backgroundColor = "grey";
+                txt.style.color = "white";
+            }
+
+            texte.parentElement.style.backgroundColor = "white";
+            texte.style.color = "grey";
+
+            if (texte.innerHTML.localeCompare("The tool")===0){
+
+                console.log("Dans le if");
+                console.log(document.getElementById("#content"));
+
+                document.getElementById("content").style.display = "block";
+                document.getElementById("dp1").style.display = "none";
+                document.getElementById("dp2").style.display = "none";
+            }
+
+            if (texte.innerHTML.localeCompare("Discovery process 1")===0){
+                document.getElementById("content").style.display = "none";
+                document.getElementById("dp1").style.display = "block";
+                document.getElementById("dp2").style.display = "none";
+            }
+
+            if (texte.innerHTML.localeCompare("Discovery process 2")===0){
+                document.getElementById("content").style.display = "none";
+                document.getElementById("dp1").style.display = "none";
+                document.getElementById("dp2").style.display = "block";
+            }
+            }
+
+    </script>
+
 </head>
 <body>
 
 <div class="header">
+
+    <ul id="listeOptions">
+        <li style="background-color:white;"><p style="color:grey;" onmousedown="goToPage(this)";>The tool</p></li>
+        <li><p onmousedown="goToPage(this);">Discovery process 1</p></li>
+        <li><p onmousedown="goToPage(this);">Discovery process 2</p></li>
+
+    </ul>
 
     <h1>Visualizing World Values</h1>
 
@@ -82,6 +166,16 @@
 <div id="content">
      <script type='text/javascript' src='script.js'></script>
 </div>
+
+<div id="dp1">
+    <p> Discovery process 1</p>
+</div>
+
+<div id="dp2">
+    <p>Discovery process 2</p>
+</div>
+
+
 
 <div class="footer">
     <div>
