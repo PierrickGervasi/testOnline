@@ -102,7 +102,7 @@ d3.csv('1981-1984.csv',function (data1) {
 
                         var titleTool = document.createElement('h1');
                         document.getElementById('content').appendChild(titleTool);
-                        titleTool.innerHTML = "Discovery Process Tool";
+                        titleTool.innerHTML = "Discovery Process Tool (mouse over a country for details, do not click);
                         titleTool.style.padding = "10px 0";
                         titleTool.style.margin = "0";
                         titleTool.style.fontSize = "20px";
