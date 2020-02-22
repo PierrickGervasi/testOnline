@@ -2,15 +2,130 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>titre</title>
+    <title>Project2</title>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin:0;
+            padding:0;
+        }
+
+        html{height:100%}
+
+        body {
+            min-height:100%;
+            position:relative;
+            padding-bottom:100px;
+        }
+
+        .header{
+            height:50px;
+            margin-bottom: 15px;
+        }
+
+        .footer{
+            position: absolute;
+            left: 0 ; right: 0; bottom: 0;
+            height:100px;
+        }
+
+        .header, .footer {
+            background-color: grey;
+            color: white;
+            overflow:auto;
+        }
+
+        .header h1{
+            display:inline-block;
+            margin:5px;
+        }
+
+        .header ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            right:0;
+            position:absolute;
+            height:100%;
+
+        }
+
+        .header li {
+            float: left;
+        }
+
+        .header a {
+            display: inline-block;
+            color:white;
+            text-decoration: none;
+            line-height: 50px;
+            padding-left:15px;
+            padding-right:15px;
+        }
+
+        .header a:active{
+            background-color:white;
+        }
+
+
+        .footer div{
+            width:50%;
+            height:100%;
+            float: left;
+            background-color: grey;
+            padding:15px;
+        }
+
+        .axis text {
+            font: 10px sans-serif;
+        }
+
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: #000;
+            shape-rendering: crispEdges;
+        }
+
+        label {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+    </style>
+
 </head>
 <body>
 
-<p> paragraphe</p>
+<div class="header">
 
-<h1>titre</h1>
+    <ul>
+        <li style="background-color:white;"><a href="toolPage.html" style="color:grey;">The tool</a></li>
+        <li><a href="storyPage.html">The story</a></li>
+    </ul>
+    <h1>Visualizing World Values</h1>
 
-<p>heyhey</p>
+</div>
+
+<div class="content">
+    <!-- <script type='text/javascript' src='script6.js'></script> -->
+</div>
+
+<div class="footer">
+    <div>
+        <h2>The author</h2>
+        <p>Pierrick Gervasi</p>
+    </div>
+    <div style="text-align:right">
+        <h2>Source</h2>
+        <p>World Value Survey</p>
+    </div>
+</div>
+
 
 </body>
 </html>
