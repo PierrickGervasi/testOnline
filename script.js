@@ -7,8 +7,9 @@ d3.csv('1981-1984.csv',function (data1) {
 
                         var data = data1;
 
+                        var content = d3.select('#content');
 
-                        var body = d3.select('body')
+
                         var selectData = [{"text": "Feeling of happiness: Quite or very happy"},
                             {"text": "Attend religious services: once a month or more"},
                             {"text": "Number of children (mean)"},
@@ -61,7 +62,7 @@ d3.csv('1981-1984.csv',function (data1) {
                         //Annonce des pays
 
                         var countries = document.createElement('div');
-                        document.getElementsByTagName('body')[0].appendChild(countries);
+                        document.getElementById('content').appendChild(countries);
                         countries.style.border = "solid black 1px";
                         countries.style.padding = "10px";
 
@@ -100,17 +101,16 @@ d3.csv('1981-1984.csv',function (data1) {
                         ;
 
                         var titleTool = document.createElement('h1');
-                        document.getElementsByTagName('body')[0].appendChild(titleTool);
+                        document.getElementById('content').appendChild(titleTool);
                         titleTool.innerHTML = "Discovery Process Tool";
                         titleTool.style.padding = "10px 0";
                         titleTool.style.margin = "0";
                         titleTool.style.fontSize = "20px";
 
-
                         // Select X-axis Variable
-                        var span = body.append('span')
+                        var span = content.append('span')
                             .text('Select X-Axis variable: ')
-                        var xInput = body.append('select')
+                        var xInput = content.append('select')
                             .attr('id', 'xSelect')
                             .on('change', xChange)
                             .selectAll('option')
@@ -123,12 +123,12 @@ d3.csv('1981-1984.csv',function (data1) {
                             .text(function (d) {
                                 return d.text;
                             })
-                        body.append('br')
+                        content.append('br')
 
                         // Select Y-axis Variable
-                        var span = body.append('span')
+                        var span = content.append('span')
                             .text('Select Y-Axis variable: ')
-                        var yInput = body.append('select')
+                        var yInput = content.append('select')
                             .attr('id', 'ySelect')
                             .on('change', yChange)
                             .selectAll('option')
@@ -141,12 +141,12 @@ d3.csv('1981-1984.csv',function (data1) {
                             .text(function (d) {
                                 return d.text;
                             })
-                        body.append('br')
+                        content.append('br')
 
                         // Select Time Variable
-                        var span = body.append('span')
+                        var span = content.append('span')
                             .text('Period: ')
-                        var yInput = body.append('select')
+                        var yInput = content.append('select')
                             .attr('id', 'periodSelect')
                             .on('change', periodChange)
                             .selectAll('option')
@@ -159,11 +159,10 @@ d3.csv('1981-1984.csv',function (data1) {
                             .text(function (d) {
                                 return d.text;
                             })
-                        body.append('br')
+                        content.append('br')
 
 
                         // Variables
-                        var body = d3.select('body')
                         var margin = {top: 50, right: 50, bottom: 50, left: 150}
                         var h = 500 - margin.top - margin.bottom
                         var w = 500 - margin.left - margin.right
@@ -190,7 +189,7 @@ d3.csv('1981-1984.csv',function (data1) {
 
 
                         // SVG
-                        var svg = body.append('svg')
+                        var svg = content.append('svg')
                             .attr('height', h + margin.top + margin.bottom)
                             .attr('width', w + margin.left + margin.right)
                             .append('g')
@@ -350,7 +349,7 @@ d3.csv('1981-1984.csv',function (data1) {
 
                         var noDataCountries = document.createElement('div');
                         noDataCountries.id = "noDataCountries";
-                        document.getElementsByTagName('body')[0].appendChild(noDataCountries);
+                        document.getElementById('content').appendChild(noDataCountries);
                         noDataCountries.style.border = "solid black 1px";
                         noDataCountries.style.padding = "10px";
                         noDataCountries.style.marginBottom = "10px";
