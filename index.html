@@ -134,19 +134,30 @@
                 document.getElementById("content").style.display = "block";
                 document.getElementById("dp1").style.display = "none";
                 document.getElementById("dp2").style.display = "none";
+                document.getElementById("learnings").style.display = "none";
             }
 
             if (texte.innerHTML.localeCompare("Discovery process 1")===0){
                 document.getElementById("content").style.display = "none";
                 document.getElementById("dp1").style.display = "block";
                 document.getElementById("dp2").style.display = "none";
+                document.getElementById("learnings").style.display = "none";
             }
 
             if (texte.innerHTML.localeCompare("Discovery process 2")===0){
                 document.getElementById("content").style.display = "none";
                 document.getElementById("dp1").style.display = "none";
                 document.getElementById("dp2").style.display = "block";
+                document.getElementById("learnings").style.display = "none";
             }
+
+            if (texte.innerHTML.localeCompare("Learnings")===0){
+                document.getElementById("content").style.display = "none";
+                document.getElementById("dp1").style.display = "none";
+                document.getElementById("dp2").style.display = "none";
+                document.getElementById("learnings").style.display = "block";
+            }
+
             }
 
     </script>
@@ -160,6 +171,7 @@
         <li style="background-color:white;"><p style="color:grey;" onmousedown="goToPage(this)";>The tool</p></li>
         <li><p onmousedown="goToPage(this);">Discovery process 1</p></li>
         <li><p onmousedown="goToPage(this);">Discovery process 2</p></li>
+        <li><p onmousedown="goToPage(this);">Learnings</p></li>
 
     </ul>
 
@@ -215,7 +227,12 @@
 
 </div>
 
-
+<div id="learnings" class="page">
+    <h2> Learnings </h2>
+    <p>This project allowed me to learn HTML, CSS and javascript again, as I already knew some but had forgotten almost everything.</p>
+    <br>
+    <p>Also, before the project 2 I never used d3. Project 2 allowed me to know more about this javascript library and how to program with it. I feel now more comfortable with the tool.</p>
+</div>
 
 <div class="footer">
     <div>
